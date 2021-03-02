@@ -1,0 +1,18 @@
+{
+  "version": "0.8.1",
+  "description": "Configurable screen ruler for measuring in pixels, centimeters, inches, points and percent",
+  "homepage": "https://github.com/Bluegrams/ScreenRuler",
+  "license": "BSD-3-Clause",
+  "url": "https://sourceforge.net/projects/screenruler/files/v.0.8.1/ScreenRuler-v.0.8.1-Portable.zip",
+  "hash": "805042b33d9670532afbaefa15eda660f1b34b2f5f113452e403a4cc97e08528",
+  "extract_dir": "ScreenRuler-v.0.8.1-Portable",
+  "bin": "screenruler.exe",
+  "shortcuts": [
+    [
+      "screenruler.exe",
+      "Screen Ruler"
+    ]
+  ],
+  "pre_install": "if (!(Test-Path \"$persist_dir\\portable.config\")) { New-Item \"$dir\\portable.config\" | Out-Null }",
+  "persist": "portable.config"
+}
