@@ -1,0 +1,29 @@
+{
+  "version": "3.15",
+  "description": "A typeface carefully crafted & designed for computer screens.",
+  "license": "OFL-1.1",
+  "homepage": "https://rsms.me/inter/",
+  "url": "https://github.com/rsms/inter/releases/download/v3.15/Inter-3.15.zip",
+  "hash": "1534288eb599f57acbf2c5ac0010da9495c2ee53116e08d799555c6f8ee22156",
+  "depends": "sudo",
+  "extract_dir": "Inter Hinted for Windows/Desktop",
+  "installer": {
+      "script": [
+          "if(!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+          "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
+          "    New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+          "    Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+          "}"
+      ]
+  },
+  "uninstaller": {
+      "script": [
+          "if(!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop uninstall $app'\"; exit 1 }",
+          "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
+          "    Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+          "    Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+          "}",
+          "Write-Host \"The '$($app.Replace('-NF', ''))' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+      ]
+  }
+}
