@@ -1,10 +1,10 @@
 {
-  "version": "3.028",
+  "version": "3.046",
   "description": "Sans serif font family for user interface environments.",
   "license": "OFL-1.1",
   "homepage": "https://adobe-fonts.github.io/source-sans/",
-  "url": "https://github.com/adobe-fonts/source-sans/releases/download/3.028R/source-sans-3v028R.zip",
-  "hash": "1186d594ecb1336679a1d102bb6ddbe6041f0fd029482e53f02e46aa3ab011cf",
+  "url": "https://github.com/adobe-fonts/source-sans/releases/download/3.046R/TTF-source-sans-3.046R.zip",
+  "hash": "dc899c8ba784b33aede8cd46aabb4dc9992bd71a4b19cd9f9401cbb008bbb574",
   "depends": "sudo",
   "extract_dir": "TTF",
   "installer": {
