@@ -1,0 +1,46 @@
+{
+  "version": "1.31.0.0",
+  "description": "A simple tabbed launcher",
+  "homepage": "https://maxlauncher.sourceforge.io/",
+  "license": "MS-RL",
+  "url": "https://sourceforge.net/projects/maxlauncher/files/MaxLauncher/1.31.0.0/maxlauncher_1.31.0.0_portable.zip",
+  "hash": "a7b807b0a9470e2cd7f3d70a1389fa0fe4a46ca1416f274bd91990f95e8bd00c",
+  "bin": "MaxLauncher.exe",
+  "shortcuts": [
+    [
+      "MaxLauncher.exe",
+      "MaxLauncher"
+    ]
+  ],
+  "pre_install": [
+    "if (!(Test-Path \"$persist_dir\\app.cfg\")) {",
+    "  @(",
+    "    '<?xml version=\"1.0\" encoding=\"utf-8\"?>'",
+    "    '<AppConfig xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">'",
+    "    '</AppConfig>'",
+    "  ) | Add-Content -Path \"$dir\\app.cfg\" -Encoding ASCII -Force",
+    "}",
+
+    "if (!(Test-Path \"$persist_dir\\window.cfg\")) {",
+    "  @(",
+    "    '<?xml version=\"1.0\" encoding=\"utf-8\"?>'",
+    "    '<WindowConfig xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">'",
+    "    '</WindowConfig>'",
+    "  ) | Add-Content -Path \"$dir\\window.cfg\" -Encoding ASCII -Force",
+    "}",
+
+    "if (!(Test-Path \"$persist_dir\\favorites.cfg\")) {",
+    "  @(",
+    "    '<?xml version=\"1.0\" standalone=\"yes\"?>'",
+    "    '<FavoritesBarData>'",
+    "    '</FavoritesBarData>'",
+    "  ) | Add-Content -Path \"$dir\\favorites.cfg\" -Encoding ASCII -Force",
+    "}"
+  ],
+  "persist": [
+    "app.cfg",
+    "window.cfg",
+    "favorites.cfg",
+    "Themes"
+  ]
+}
