@@ -2,7 +2,7 @@
   "version": "3.19",
   "description": "A typeface carefully crafted & designed for computer screens.",
   "license": "OFL-1.1",
-  "homepage": "https://rsms.me/inter/",
+  "homepage": "https://github.com/rsms/inter",
   "url": "https://github.com/rsms/inter/releases/download/v3.19/Inter-3.19.zip",
   "hash": "150ab6230d1762a57bebf35dfc04d606ff91598a31d785f7f100356ecdcc0032",
   "depends": "sudo",
@@ -25,5 +25,9 @@
           "}",
           "Write-Host \"The '$($app.Replace('-NF', ''))' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
       ]
+  },
+  "checkver": "github",
+  "autoupdate": {
+      "url": "https://github.com/rsms/inter/releases/download/v$version/Inter-$version.zip"
   }
 }

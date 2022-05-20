@@ -2,7 +2,7 @@
   "version": "3.046",
   "description": "Sans serif font family for user interface environments.",
   "license": "OFL-1.1",
-  "homepage": "https://adobe-fonts.github.io/source-sans/",
+  "homepage": "https://github.com/adobe-fonts/source-sans",
   "url": "https://github.com/adobe-fonts/source-sans/releases/download/3.046R/TTF-source-sans-3.046R.zip",
   "hash": "dc899c8ba784b33aede8cd46aabb4dc9992bd71a4b19cd9f9401cbb008bbb574",
   "depends": "sudo",
@@ -25,5 +25,9 @@
           "}",
           "Write-Host \"The '$($app.Replace('-NF', ''))' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
       ]
+  },
+  "checkver": "github",
+  "autoupdate": {
+      "url": "https://github.com/adobe-fonts/source-sans/releases/download/$versionR/TTF-source-sans-$versionR.zip"
   }
 }

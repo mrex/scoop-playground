@@ -2,7 +2,7 @@
   "version": "4.004",
   "description": "Typeface for setting text in many sizes, weights, and languages. Designed to complement Source Sans.",
   "license": "OFL-1.1",
-  "homepage": "https://adobe-fonts.github.io/source-serif/",
+  "homepage": "https://github.com/adobe-fonts/source-serif",
   "url": "https://github.com/adobe-fonts/source-serif/releases/download/4.004R/source-serif-4.004.zip",
   "hash": "cb3e95d6e3c1273d44300dd464e568d4c9613b28199c53c50454af4b40bbdac1",
   "depends": "sudo",
@@ -25,5 +25,9 @@
           "}",
           "Write-Host \"The '$($app.Replace('-NF', ''))' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
       ]
+  },
+  "checkver": "github",
+  "autoupdate": {
+      "url": "https://github.com/adobe-fonts/source-serif/releases/download/$versionR/source-serif-$version.zip"
   }
 }
